@@ -7,7 +7,7 @@ Cesar Ahumada y Joshua Ibarra
 #include <iostream>
 using namespace std;
 
-const int tamMax = 10; // tamanio maximo de la pila
+const int tamMax = 10; // tamaño maximo de la pila
 int pila[tamMax]; // inicializacion de arreglo para la pila
 
 int indice = 0; // posicion donde se ingresara el siguiente elemento de la pila
