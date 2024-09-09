@@ -12,7 +12,6 @@ void imprimirVector(int vector[], int n);
 void imprimirMax(int vector[], int n);
 void imprimirMin(int vector[], int n);
 void buscarValor(int vector[], int n);
-void insertarValor(int vector[], int &n, int max_size);
 
 int main()
 {
@@ -41,8 +40,7 @@ int main()
              << "2.- Imprimir valor maximo" << endl
              << "3.- Imprimir valor minimo" << endl
              << "4.- Buscar valor" << endl
-             << "5.- Insertar valor" << endl
-             << "6.- Salir del programa" << endl
+             << "5.- Salir del programa" << endl
              << "> ";
         cin >> opc;
 
@@ -64,9 +62,9 @@ int main()
         }
         else if (opc == 5)
         {
-            insertarValor(vector, n, max_size);
+            return 0;
         }
-        else if (opc != 6)
+        else 
         {
             cout << "Vuelva a elegir." << endl;
         }
@@ -144,7 +142,7 @@ void buscarValor(int vector[], int n)
     {
         if (vector[i] == value)
         {
-            cout << "El valor " << value << " se encuentra en el índice: " << i << endl;
+            cout << "El valor " << value << " se encuentra en el indice: " << i << endl;
             found = true;
         }
     }
@@ -152,22 +150,5 @@ void buscarValor(int vector[], int n)
     if (!found)
     {
         cout << "El valor " << value << " no existe en el vector." << endl;
-    }
-}
-
-void insertarValor(int vector[], int &n, int max_size)
-{
-    if (n == max_size)
-    {
-        cout << "El vector esta lleno." << endl;
-    }
-    else
-    {
-        int value;
-        cout << "Ingrese el valor a insertar: ";
-        cin >> value;
-        vector[n] = value;
-        n++;
-        cout << "Valor insertado." << endl;
     }
 }
