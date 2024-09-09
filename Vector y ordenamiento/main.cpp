@@ -15,6 +15,7 @@ void buscarValor(int vector[], int n);
 
 int main()
 {
+    system ("cls"); // funcion para borrar la pantalla
     int n = 0;                // tamaño del vector
     const int max_size = 100; // tamaño maximo del vector
 
