@@ -7,17 +7,16 @@ Cesar Ahumada y Joshua Ibarra
 #include <iostream>
 using namespace std;
 
-void ordenarVector(int vector[], int n); 
+void ordenarVector(int vector[], int n);
 void imprimirVector(int vector[], int n);
 void imprimirMax(int vector[], int n);
 void imprimirMin(int vector[], int n);
 void buscarValor(int vector[], int n);
 void insertarValor(int vector[], int &n, int max_size);
 
-
 int main()
 {
-    int n = 0; // tamaño del vector
+    int n = 0;                // tamaño del vector
     const int max_size = 100; // tamaño maximo del vector
 
     cout << "Ingrese el tamano del vector: ";
@@ -31,8 +30,8 @@ int main()
         cin >> vector[i];
     }
 
-    //bubble sort para organizar el vector de menor a mayor
-    ordenarVector(vector,n);
+    // bubble sort para organizar el vector de menor a mayor
+    ordenarVector(vector, n);
 
     int opc = 0;
 
@@ -76,13 +75,17 @@ int main()
     return 0;
 }
 
-void ordenarVector(int vector[], int n) { //bubble sort
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n - i - 1; j++){
-            if (vector[j] > vector [j + 1]){
-                int x  = vector [j];
-                vector [j] = vector [j + 1];
-                vector[j + 1] =  x;
+void ordenarVector(int vector[], int n)
+{ // bubble sort
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (vector[j] > vector[j + 1])
+            {
+                int x = vector[j];
+                vector[j] = vector[j + 1];
+                vector[j + 1] = x;
             }
         }
     }
