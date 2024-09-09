@@ -143,7 +143,7 @@ void buscarValor(int vector[], int n)
     {
         if (vector[i] == value)
         {
-            cout << "El valor " << value << " se encuentra en el indice: " << i << endl;
+            cout << "El valor " << value << " se encuentra en el indice: " << i + 1 << endl;
             found = true;
         }
     }
