@@ -7,21 +7,23 @@ Cesar Ahumada y Joshua Ibarra
 #include <iostream>
 using namespace std;
 
+void ordenarVector(int vector[], int n); 
 void imprimirVector(int vector[], int n);
 void imprimirMax(int vector[], int n);
 void imprimirMin(int vector[], int n);
 void buscarValor(int vector[], int n);
 void insertarValor(int vector[], int &n, int max_size);
 
+
 int main()
 {
-    int n = 0; // tamanio del vector
-    const int max_size = 100; // tamaño máximo del vector
+    int n = 0; // tamaño del vector
+    const int max_size = 100; // tamaño maximo del vector
 
-    cout << "Ingrese el tamaño del vector: ";
+    cout << "Ingrese el tamano del vector: ";
     cin >> n;
 
-    int vector[max_size]; // se define con tamaño máximo
+    int vector[max_size]; // se define con tamaño maximo
 
     for (int i = 0; i < n; i++) // llenar vector
     {
@@ -29,13 +31,16 @@ int main()
         cin >> vector[i];
     }
 
+    //bubble sort para organizar el vector de menor a mayor
+    ordenarVector(vector,n);
+
     int opc = 0;
 
     do
     {
         cout << "1.- Imprimir Vector" << endl
-             << "2.- Imprimir valor máximo" << endl
-             << "3.- Imprimir valor mínimo" << endl
+             << "2.- Imprimir valor maximo" << endl
+             << "3.- Imprimir valor minimo" << endl
              << "4.- Buscar valor" << endl
              << "5.- Insertar valor" << endl
              << "6.- Salir del programa" << endl
@@ -71,11 +76,23 @@ int main()
     return 0;
 }
 
+void ordenarVector(int vector[], int n) { //bubble sort
+    for (int i = 0; i < n - 1; i++){
+        for (int j = 0; j < n - i - 1; j++){
+            if (vector[j] > vector [j + 1]){
+                int x  = vector [j];
+                vector [j] = vector [j + 1];
+                vector[j + 1] =  x;
+            }
+        }
+    }
+}
+
 void imprimirVector(int vector[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << "Elemento en la posicion " << i << ": " << vector[i] << endl;
+        cout << "Elemento en la posicion " << i + 1 << ": " << vector[i] << endl;
     }
 }
 
@@ -94,7 +111,6 @@ void imprimirMax(int vector[], int n)
     }
 
     cout << "El valor maximo del vector es: " << max_value << endl;
-    cout << "Se encuentra en la posicion: " << max_posicion << endl;
 }
 
 void imprimirMin(int vector[], int n)
@@ -112,7 +128,6 @@ void imprimirMin(int vector[], int n)
     }
 
     cout << "El valor minimo del vector es: " << min_value << endl;
-    cout << "Se encuentra en la posición: " << min_posicion << endl;
 }
 
 void buscarValor(int vector[], int n)
